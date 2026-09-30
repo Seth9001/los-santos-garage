@@ -1,10 +1,18 @@
+using Microsoft.EntityFrameworkCore;
 using System.Formats.Tar;
+using LosSantosGarage.Api.Data;
+using LosSantosGarage.Api.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+var connectionString = builder.Configuration.GetConnectionString("GarageDb") ?? throw new InvalidOperationException("Connection string not found");
+
+builder.Services.AddDbContext<GarageDbContext>(options =>
+    options.UseSqlite(connectionString));
 
 var app = builder.Build();
 
