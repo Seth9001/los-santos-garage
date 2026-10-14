@@ -33,6 +33,38 @@ namespace LosSantosGarage.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Games");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "GTA III",
+                            ReleaseDate = new DateOnly(2001, 10, 22)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "GTA Vice City",
+                            ReleaseDate = new DateOnly(2002, 10, 29)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "GTA San Andreas",
+                            ReleaseDate = new DateOnly(2004, 10, 26)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "GTA IV",
+                            ReleaseDate = new DateOnly(2008, 4, 29)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "GTA V",
+                            ReleaseDate = new DateOnly(2013, 9, 17)
+                        });
                 });
 
             modelBuilder.Entity("LosSantosGarage.Api.Entities.Garage", b =>
@@ -48,6 +80,13 @@ namespace LosSantosGarage.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Garages");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Seth's Garage"
+                        });
                 });
 
             modelBuilder.Entity("LosSantosGarage.Api.Entities.GarageItem", b =>
@@ -87,6 +126,43 @@ namespace LosSantosGarage.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Vehicles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Infernus"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Banshee"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Sanchez"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Sultan"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Cheetah"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Patriot"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "PCJ-600"
+                        });
                 });
 
             modelBuilder.Entity("LosSantosGarage.Api.Entities.VehicleGame", b =>
@@ -112,6 +188,218 @@ namespace LosSantosGarage.Api.Migrations
                         .IsUnique();
 
                     b.ToTable("VehicleGames");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Class = 1,
+                            GameId = 1,
+                            VehicleId = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Class = 1,
+                            GameId = 2,
+                            VehicleId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Class = 1,
+                            GameId = 3,
+                            VehicleId = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Class = 1,
+                            GameId = 4,
+                            VehicleId = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Class = 1,
+                            GameId = 5,
+                            VehicleId = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Class = 4,
+                            GameId = 3,
+                            VehicleId = 4
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Class = 4,
+                            GameId = 4,
+                            VehicleId = 4
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Class = 1,
+                            GameId = 5,
+                            VehicleId = 4
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Class = 7,
+                            GameId = 2,
+                            VehicleId = 7
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Class = 7,
+                            GameId = 3,
+                            VehicleId = 7
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Class = 7,
+                            GameId = 4,
+                            VehicleId = 7
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Class = 7,
+                            GameId = 5,
+                            VehicleId = 7
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Class = 2,
+                            GameId = 1,
+                            VehicleId = 1
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Class = 2,
+                            GameId = 2,
+                            VehicleId = 1
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Class = 2,
+                            GameId = 3,
+                            VehicleId = 1
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Class = 2,
+                            GameId = 4,
+                            VehicleId = 1
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Class = 2,
+                            GameId = 5,
+                            VehicleId = 1
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Class = 7,
+                            GameId = 2,
+                            VehicleId = 3
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Class = 7,
+                            GameId = 3,
+                            VehicleId = 3
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Class = 7,
+                            GameId = 4,
+                            VehicleId = 3
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Class = 7,
+                            GameId = 5,
+                            VehicleId = 3
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Class = 2,
+                            GameId = 1,
+                            VehicleId = 5
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Class = 2,
+                            GameId = 2,
+                            VehicleId = 5
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Class = 2,
+                            GameId = 3,
+                            VehicleId = 5
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Class = 2,
+                            GameId = 5,
+                            VehicleId = 5
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Class = 5,
+                            GameId = 1,
+                            VehicleId = 6
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Class = 5,
+                            GameId = 2,
+                            VehicleId = 6
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Class = 5,
+                            GameId = 3,
+                            VehicleId = 6
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Class = 5,
+                            GameId = 4,
+                            VehicleId = 6
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Class = 5,
+                            GameId = 5,
+                            VehicleId = 6
+                        });
                 });
 
             modelBuilder.Entity("LosSantosGarage.Api.Entities.GarageItem", b =>

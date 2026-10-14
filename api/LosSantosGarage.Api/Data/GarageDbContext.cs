@@ -22,7 +22,12 @@ public class GarageDbContext : DbContext
 
         modelBuilder.Entity<VehicleGame>(entity =>
         {
-            entity.HasIndex(x => new { x.VehicleId, x.GameId}).IsUnique();                     
+            entity.HasIndex(x => new { x.VehicleId, x.GameId }).IsUnique();
         });
+
+        modelBuilder.Entity<Game>().HasData(SeedData.GetGames());
+        modelBuilder.Entity<Vehicle>().HasData(SeedData.GetVehicles());
+        modelBuilder.Entity<VehicleGame>().HasData(SeedData.GetVehicleGames());
+        modelBuilder.Entity<Garage>().HasData(SeedData.GetGarages());
     }
 }

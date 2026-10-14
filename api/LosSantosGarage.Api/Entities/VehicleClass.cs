@@ -1,16 +1,14 @@
-﻿namespace LosSantosGarage.Api.Entities
+﻿namespace LosSantosGarage.Api.Entities;
+
+public enum VehicleClass
 {
-    public enum VehicleClass
-    {
 
-        Sports,
-        Super,
-        Compact,
-        Sedan,
-        SUV,
-        Truck,
-        Motorcycle
-
-    }
+    Sports = 1,
+    Super = 2,
+    Compact = 3,
+    Sedan = 4,
+    SUV = 5,
+    Truck = 6,
+    Motorcycle = 7
 
 }
