@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Formats.Tar;
 using LosSantosGarage.Api.Data;
 using LosSantosGarage.Api.Entities;
+using LosSantosGarage.Api.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +35,7 @@ var games = new[]
     "GTA III", "GTA Vice City", "GTA San Andreas", "GTA IV", "GTA V"
 };
 
+/*
 app.MapGet("/weatherforecast", () =>
 {
     var forecast = Enumerable.Range(1, 5).Select(index =>
@@ -48,11 +50,14 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+
 app.MapGet("/Games", () =>
 {
     return games;
 })
 .WithName("GetGameList");
+*/
+app.MapCatalogEndpoints();
 
 app.Run();
 
