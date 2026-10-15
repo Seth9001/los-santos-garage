@@ -1,6 +1,6 @@
 @LosSantosGarage.Api_HostAddress = http://localhost:5267
 
-GET {{LosSantosGarage.Api_HostAddress}}/api/catalog
+GET {{LosSantosGarage.Api_HostAddress}}/api/garage
 Accept: application/json
 
 ###

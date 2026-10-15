@@ -58,7 +58,7 @@ app.MapGet("/Games", () =>
 .WithName("GetGameList");
 */
 app.MapCatalogEndpoints();
-
+app.MapGarageEndpoints();
 app.Run();
 
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
