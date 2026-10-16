@@ -4,3 +4,10 @@ GET {{LosSantosGarage.Api_HostAddress}}/api/garage
 Accept: application/json
 
 ###
+
+POST {{LosSantosGarage.Api_HostAddress}}/api/garage
+Content-Type: application/json
+
+{
+  "vehicleGameId": 100
+}
