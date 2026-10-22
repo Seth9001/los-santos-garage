@@ -9,5 +9,5 @@ POST {{LosSantosGarage.Api_HostAddress}}/api/garage
 Content-Type: application/json
 
 {
-  "vehicleGameId": 100
+  "vehicleGameId": 2
 }
