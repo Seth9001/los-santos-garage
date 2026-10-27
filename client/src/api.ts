@@ -10,6 +10,16 @@ export async function getCatalogItems(): Promise<CatalogItem[]>{
     return response.json();
 }
 
+export async function getGarage(): Promise<GarageItem[]>{
+    const response = await fetch("/api/garage");
+
+    if(!response.ok){
+        throw new Error(`Failed to load garage : ${response.status}`);
+    }
+
+    return response.json();
+}
+
 export async function addToGarage(vehicleGameId: number): Promise<GarageItem>{
     const response = await fetch ('/api/garage', {
         method: 'POST',
