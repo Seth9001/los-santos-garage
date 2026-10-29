@@ -34,3 +34,13 @@ export async function addToGarage(vehicleGameId: number): Promise<GarageItem>{
 
     return response.json();
 }
+
+export async function removeFromGarage(garageItemId: number): Promise<void>{
+    const response = await fetch (`/api/garage/${garageItemId}`, {
+        method: 'DELETE'
+    });
+
+    if(!response.ok){
+        throw new Error(`Failed to delete garage item: ${response.status}`)
+    }
+}
