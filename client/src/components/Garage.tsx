@@ -1,30 +1,27 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { GarageItem } from "../types";
-import { getGarage, removeFromGarage } from "../api";
-export default function Garage() {
-  const [items, setItems] = useState<GarageItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [message, setMessage] = useState<string | null>(null);
+import { removeFromGarage } from "../api";
 
-  useEffect(() => {
-    async function load() {
-      try {
-        const myGarage = await getGarage();
-        setItems(myGarage);
-      } catch {
-        setError("Failed to load garage. Is the API running?");
-      } finally {
-        setLoading(false);
-      }
-    }
-    load();
-  }, []);
+type GarageProps = {
+  items: GarageItem[];
+  loading: boolean;
+  error: string | null;
+  onRemoved: (garageItemId: number) => void;
+};
+
+export default function Garage({
+  items,
+  loading,
+  error,
+  onRemoved,
+}: GarageProps) {
+  const [message, setMessage] = useState<string | null>(null);
 
   async function handleRemove(garageItemId: number) {
     try {
       await removeFromGarage(garageItemId);
-      setItems(items.filter((i) => i.garageItemId !== garageItemId));
+      //setItems(items.filter((i) => i.garageItemId !== garageItemId));
+      onRemoved(garageItemId);
       setMessage("item removed from garage");
     } catch {
       setMessage("item failed to remove from garage");
