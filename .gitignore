@@ -428,3 +428,5 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+api/LosSantosGarage.Api/wwwroot/

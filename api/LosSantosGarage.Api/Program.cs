@@ -17,6 +17,9 @@ builder.Services.AddDbContext<GarageDbContext>(options =>
 
 var app = builder.Build();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -59,6 +62,9 @@ app.MapGet("/Games", () =>
 */
 app.MapCatalogEndpoints();
 app.MapGarageEndpoints();
+
+app.MapFallbackToFile("index.html");
+
 app.Run();
 
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
