@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   function handleAdded(garageItem: GarageItem) {
-    console.log(`Garage item added: ${garageItem.vehicleName}`);
+    setGarageItems([garageItem, ...garageItems]);
   }
 
   function handleRemoved(garageItemId: number) {
