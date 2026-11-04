@@ -13,7 +13,7 @@ builder.Services.AddOpenApi();
 var connectionString = builder.Configuration.GetConnectionString("GarageDb") ?? throw new InvalidOperationException("Connection string not found");
 
 builder.Services.AddDbContext<GarageDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
